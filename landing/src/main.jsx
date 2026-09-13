@@ -15,6 +15,18 @@ import impactImageOne from './assests/impact 1.png';
 import impactImageTwo from './assests/impact 2.png';
 import impactImageThree from './assests/impact 3.png';
 import impactImageFour from './assests/impact 4.png';
+import voicesOne from './assests/Rectangle 3.png'
+import voicesTwo from './assests/Rectangle 3 (1).png'
+import voicesThree from './assests/Rectangle 3 (2).png'
+import voicesFour from './assests/Rectangle 3 (3).png'
+import eventOne from './assests/event 1.png'
+import eventTwo from './assests/event 2.png'
+import eventLogoOne from './assests/eventlogo1.png'
+import eventLogoTwo from './assests/eventlogo2.png'
+import supportImg from './assests/support.png'
+import explorePeopleOne from './assests/explore-people 1.png'
+import explorePeopleTwo from './assests/explore-people 2.png'
+
 
 const topics = [
   { number: '01', title: 'The inner life', copy: 'A gentler language for the parts of us no one else can see.', color: 'bg-blush text-paper' },
@@ -80,7 +92,16 @@ function App() {
             <div className="relative left-1/2 mt-1 w-[calc(100vw+20px)] -translate-x-1/2 overflow-visible">
               <img src={heroImage} alt="Illustrated people exploring ideas together" className="block h-auto w-full max-w-none" />
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-ink/10 py-5 text-ink/75 sm:gap-x-12"><span className="text-xs">Supported by</span><span className="font-semibold tracking-tight">◉ databricks</span><span className="font-semibold">◈ Linear</span><span className="font-semibold tracking-widest">CIRCUS</span><span className="font-semibold tracking-widest">MERCURY</span><span className="font-semibold">remote</span></div>
+            <div className="py-5 text-center text-ink/75">
+              <p className="font-google-sans-flex text-base font-medium">Supported by</p>
+              <div className="sponsor-marquee mt-4" aria-label="Supported by our partners">
+                <div className="sponsor-marquee-track">
+                  <img src={supportImg} alt="Partner logo placeholder" aria-hidden="true" />
+                  <img src={supportImg} alt="Partner logo placeholder" aria-hidden="true" />
+                  <img src={supportImg} alt="Partner logo placeholder" aria-hidden="true" />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -122,13 +143,13 @@ function App() {
             <h2 className="font-instrument text-4xl leading-none sm:text-5xl">Community Voices</h2>
             <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                ['Forecasting potential misuses of language models for disinformation campaigns and how to reduce risk', 'Jan 11, 2023', 'c6f06a'],
-                ['Forecasting potential misuses of language models and how to reduce risk', 'Jan 11, 2023', '88a29a'],
-                ['Forecasting potential misuses of language models and how to reduce risk', 'Jan 11, 2023', 'd8d1b8'],
-                ['Forecasting potential misuses of language models and how to reduce risk', 'Jan 11, 2023', 'adc5a0']
-              ].map(([title, date, color]) => (
-                <article key={`${title}-${color}`} className="min-w-0">
-                  <img src={`https://placehold.co/640x330/${color}/202321?text=Image+Placeholder`} alt="Community voice image placeholder" className="aspect-[1.65] w-full rounded-none border-4 border-ink object-cover" />
+                ['Forecasting potential misuses of language models for disinformation campaigns and how to reduce risk', 'Jan 11, 2023', voicesOne],
+                ['Forecasting potential misuses of language models and how to reduce risk', 'Jan 11, 2023', voicesTwo],
+                ['Forecasting potential misuses of language models and how to reduce risk', 'Jan 11, 2023', voicesThree],
+                ['Forecasting potential misuses of language models and how to reduce risk', 'Jan 11, 2023', voicesFour]
+              ].map(([title, date, URL]) => (
+                <article key={`${title}-${URL}`} className="min-w-0">
+                  <img src= {`${URL}`} alt="Community voice image placeholder" className="aspect-[1.65] w-full" />
                   <h3 className="font-google-sans-flex mt-2 text-sm font-medium leading-[1.15]">{title}</h3>
                   <p className="font-google-sans-flex mt-1 text-sm font-normal text-ink/75">{date}</p>
                 </article>
@@ -144,13 +165,46 @@ function App() {
         <section id="topics" className="bg-[#f8ead1] px-4 pb-20 sm:px-5 lg:pb-28">
           <div className="mx-auto max-w-[1440px]">
             <h2 className="font-instrument text-4xl leading-none sm:text-5xl">Explore Topics</h2>
-            <div className="mt-6 grid auto-rows-[168px] gap-3 sm:grid-cols-2 lg:grid-cols-6">
-              <a href="#newsletter" className="group rounded-2xl border-2 border-ink p-5 transition hover:bg-ink hover:text-paper lg:col-span-2"><h3 className="font-google-sans-flex text-lg font-medium">Mental Health</h3><p className="mt-2 max-w-[190px] text-sm leading-5 opacity-70">Understanding the inner world and making space for better care.</p><div className="mt-5 text-3xl">⌁</div></a>
-              <a href="#voices" className="group rounded-2xl border-2 border-ink p-5 transition hover:bg-ink hover:text-paper lg:col-span-2"><h3 className="font-google-sans-flex text-lg font-medium">Community Voices</h3><p className="mt-2 max-w-[190px] text-sm leading-5 opacity-70">Stories and perspectives from people shaping a kinder culture.</p><div className="mt-5 text-3xl">▣</div></a>
-              <a href="#newsletter" className="group rounded-2xl bg-ink p-5 text-paper transition hover:bg-blush lg:col-span-2"><h3 className="font-google-sans-flex text-lg font-medium">Art &amp; Creativity</h3><p className="mt-2 max-w-xs text-sm leading-5 text-paper/70">Discover illustrations, photography, visual art, and creative work that explore the human experience.</p></a>
-              <a href="#newsletter" className="group rounded-2xl bg-ink p-5 text-paper transition hover:bg-blush lg:col-span-3"><h3 className="font-google-sans-flex text-lg font-medium">Society &amp; Democracy</h3><p className="mt-2 max-w-sm text-sm leading-5 text-paper/70">Explore how mental wellbeing influences participation, empathy, trust, and the future of democracy.</p></a>
-              <a href="#newsletter" className="group rounded-2xl border-2 border-ink p-5 transition hover:bg-ink hover:text-paper lg:col-span-1"><h3 className="font-google-sans-flex text-lg font-medium">Meaningful Conversations</h3><p className="mt-2 text-sm leading-5 opacity-70">Make room for honest dialogue.</p></a>
-              <a href="#newsletter" className="group rounded-2xl border-2 border-ink p-5 transition hover:bg-ink hover:text-paper lg:col-span-2"><h3 className="font-google-sans-flex text-lg font-medium">Friendly For Beginners</h3><p className="mt-2 text-sm leading-5 opacity-70">Ideas without the intimidating jargon.</p></a>
+            <div className="topics-grid mt-6">
+              <a href="#newsletter" className="topic-card topic-card-light topic-card-mental group">
+                <span className="topic-symbol" aria-hidden="true">▰</span>
+                <h3>Mental Health</h3>
+                <p>Understanding the inner world and making space for better care.</p>
+                <img src={impactImageOne} alt="" aria-hidden="true" />
+              </a>
+              <a href="#voices" className="topic-card topic-card-light topic-card-community group">
+                <span className="topic-symbol" aria-hidden="true">▣</span>
+                <h3>Community Voices</h3>
+                <p>Stories and perspectives from people shaping a kinder culture.</p>
+                <img src={impactImageTwo} alt="" aria-hidden="true" />
+              </a>
+              <a href="#newsletter" className="topic-card topic-card-dark topic-card-art group">
+                <h3>Art &amp; Creativity</h3>
+                <p>Discover illustrations, photography, visual art, and creative work that explore the human experience.</p>
+                <img src={impactImageFour} alt="" aria-hidden="true" />
+              </a>
+              <div className="topic-people topic-people-left" aria-hidden="true">
+                <img src={explorePeopleOne} alt="" />
+              </div>
+              <div className="topic-people topic-people-right" aria-hidden="true">
+                <img src={explorePeopleTwo} alt="" />
+              </div>
+              <a href="#newsletter" className="topic-card topic-card-dark topic-card-society group">
+                <h3>Society &amp; Democracy</h3>
+                <p>Explore how mental wellbeing influences participation, empathy, trust, and the future of democracy.</p>
+                <img src={impactImageThree} alt="" aria-hidden="true" />
+              </a>
+              <a href="#newsletter" className="topic-card topic-card-light topic-card-conversations group">
+                <span className="topic-symbol" aria-hidden="true">⌁</span>
+                <h3>Meaningful Conversations</h3>
+                <p>Make room for honest dialogue.</p>
+              </a>
+              <a href="#newsletter" className="topic-card topic-card-light topic-card-beginners group">
+                <span className="topic-symbol" aria-hidden="true">✦</span>
+                <h3>Friendly For Beginners</h3>
+                <p>Ideas without the intimidating jargon.</p>
+                <img src={impactImageOne} alt="" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </section>
@@ -160,11 +214,14 @@ function App() {
             <h2 className="font-instrument text-4xl leading-none sm:text-5xl">Events &amp; Conversations</h2>
             <div className="mt-5 grid gap-4 lg:grid-cols-2">
               {[
-                ['OpenAccess conversation on Mental Wellness and wellbeing of mind. This is a demo text with a demo button.', 'OpenAccess', 'd8d2c7'],
-                ['OpenAccess conversation on Mental Wellness and wellbeing of mind. This is a demo text with a demo button.', '3FOLD', '31583d']
-              ].map(([detail, label, color]) => (
+                ['OpenAccess conversation on Mental Wellness and wellbeing of mind. This is a demo text with a demo button.', 'OpenAccess', eventOne,eventLogoOne],
+                ['OpenAccess conversation on Mental Wellness and wellbeing of mind. This is a demo text with a demo button.', '3FOLD', eventTwo,eventLogoTwo]
+              ].map(([detail, label, URL, logoURL]) => (
                 <article key={label} className="rounded-2xl border-2 border-ink/70 p-3 sm:p-5">
-                  <img src={`https://placehold.co/900x300/${color}/f8ead1?text=Image+Placeholder`} alt="Event image placeholder" className="aspect-[2.9] w-full rounded-xl border border-ink/60 object-cover" />
+                  <div className="relative">
+                    <img src={URL} alt="Event image" className="aspect-[2.9] w-full rounded-xl" />
+                    <img src={logoURL} alt="Event logo placeholder" className="absolute -bottom-7 left-8 z-10 h-16 w-16 rounded-full" />
+                  </div>
                   <div className="flex items-start justify-between gap-4 px-2 pb-2 pt-6">
                     <p className="max-w-md text-base leading-[1.15] sm:text-lg">{detail}</p>
                     <span className="shrink-0 rounded-full bg-ink px-4 py-2 text-xs text-paper">View More</span>
@@ -185,12 +242,12 @@ function App() {
             <div className="mt-5 grid gap-4 lg:grid-cols-[0.4fr_0.6fr]">
               <div className="grid gap-4">
                 <div className="flex min-h-[84px] items-center justify-between rounded-2xl border-2 border-ink/45 px-5"><div className="flex items-center gap-3"><span className="text-xl">Schools reached</span><img src={impactImageOne} alt="Schools reached illustration" className="h-10 w-10 object-contain" /></div><span className="rounded-full border border-ink/40 px-5 py-1 text-base">1500+</span></div>
-                <div className="flex min-h-[230px] items-center overflow-visible rounded-2xl border-2 border-ink/45 px-5"><img src={impactImageThree} alt="Stories shared illustration" className="h-48 w-36 shrink-0 object-contain sm:h-56 sm:w-44" /><div className="relative z-10"><p className="font-instrument text-7xl leading-none sm:text-8xl">5000+</p><p className="mt-2 text-3xl leading-none">Stories shared</p></div></div>
+                <div className="flex min-h-[230px] items-center overflow-visible rounded-2xl border-2 border-ink/45 px-5"><img src={impactImageThree} alt="Stories shared illustration" className="pt-4 pr-10 w-36 shrink-0 object-contain sm:w-44" /><div className="relative z-10"><p className="font-instrument text-7xl leading-none sm:text-8xl">5000+</p><p className="mt-2 text-3xl leading-none">Stories shared</p></div></div>
                 <div className="flex min-h-[84px] items-center justify-between rounded-2xl border-2 border-ink/45 px-5"><span className="text-xl">Events Hosted</span><span className="rounded-full border border-ink/40 px-5 py-1 text-base">10+</span></div>
               </div>
               <div className="grid gap-4">
-                <div className="relative flex min-h-[140px] items-center rounded-2xl border-2 border-ink/45 px-8"><div><p className="font-instrument text-6xl leading-none sm:text-7xl">400+</p><p className="mt-2 text-3xl leading-none">Articles published</p></div><img src={impactImageTwo} alt="Articles published illustration" className="absolute bottom-0 right-3 h-32 w-28 object-contain" /></div>
-                <div className="flex min-h-[230px] items-center justify-center rounded-2xl border-2 border-ink/45 text-center"><div><p className="font-instrument text-7xl leading-none sm:text-8xl">7000+</p><p className="mt-3 flex items-center justify-center gap-2 text-3xl leading-none"><img src={impactImageFour} alt="Members illustration" className="h-12 w-32 object-contain" />Members</p></div></div>
+                <div className="relative flex min-h-[140px] items-center rounded-2xl border-2 border-ink/45 px-8 py-8"><div><p className="font-instrument text-6xl leading-none sm:text-7xl">400+</p><p className="mt-2 text-3xl leading-none">Articles published</p></div><img src={impactImageTwo} alt="Articles published illustration" className="pt-4 absolute bottom-0 right-3 w-28 object-contain" /></div>
+                <div className="flex min-h-[230px] items-center justify-center rounded-2xl border-2 border-ink/45 text-center"><div><p className="font-instrument text-7xl leading-none sm:text-8xl">7000+</p><p className="mt-3 flex items-center justify-center gap-2 text-3xl leading-none"><img src={impactImageFour} alt="Members illustration" className="w-32 object-contain" />Members</p></div></div>
               </div>
             </div>
           </div>
@@ -205,7 +262,7 @@ function App() {
               <div className="relative z-10 pb-44 sm:pb-52">
                 <h2 className="font-instrument text-5xl leading-none sm:text-6xl">Join the Newsletter</h2>
                 <p className="font-sf-pro mt-5 max-w-xl text-base leading-[1.15] text-ink/65 sm:text-lg">Stay connected with our latest essays, interviews, research, community stories, and upcoming events. Thoughtful updates delivered only when there&apos;s something worth reading.</p>
-                {submitted ? <p className="font-google-sans-flex mt-6 border-b border-ink/50 pb-3 text-lg">You&apos;re on the list. See you Thursday.</p> : <form onSubmit={handleSubmit} className="relative z-10 mt-6 flex max-w-xl gap-2"><label className="sr-only" htmlFor="email">Email address</label><input id="email" required type="email" placeholder="example@email.com" className="font-sf-pro min-w-0 flex-1 rounded-full border border-ink/60 bg-[#f8ead1] px-4 py-2 text-sm outline-none placeholder:text-ink/50" /><button type="submit" className="font-sf-pro shrink-0 rounded-full bg-ink px-5 py-2 text-xs text-paper transition hover:bg-blush">Join Now</button></form>}
+                {submitted ? <p className="font-google-sans-flex mt-6 border-b border-ink/50 pb-3 text-lg">You&apos;re on the list. See you Thursday.</p> : <form onSubmit={handleSubmit} className="relative z-10 mt-6 flex max-w-xl gap-2"><label className="sr-only" htmlFor="email">Email address</label><input id="email" required type="email" placeholder="example@email.com" className="font-sf-pro min-w-0 flex-1 rounded-2xl border border-ink/60 bg-[#f8ead1] px-4 py-2 text-sm outline-none placeholder:text-ink/50" /><button type="submit" className="font-sf-pro shrink-0 rounded-2xl bg-ink px-5 py-2 text-xs text-paper transition hover:bg-blush">Join Now</button></form>}
               </div>
               <img src={newsletterPeep} alt="Newsletter illustration" className="newsletter-peep pointer-events-none absolute bottom-0 z-0 h-52 w-full object-contain object-right-bottom sm:h-80" />
             </div>
